@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="description" content="Dinner Project UPenn">
+    <meta name="keywords" content="Dinner, Project, UPenn">
+    <meta name="author" content="Naomi Pohl, Alex Fisher, Daniel Fradin">
+
+    <title>Dinner Project | Magazine</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/stylin.css" rel="stylesheet">
+
+<!-- Fonts/Gliphys -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans" rel="stylesheet">
+
+<!-- Favicon -->
+ <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <a id="menu-toggle" href="#" class="btn btn-light btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a>dinner project</a>
+            <li>
+                <a href="index.html" onclick=$("#menu-close").click();>home</a>
+            </li>
+            <li>
+                <a href="about.html" onclick=$("#menu-close").click();>about the organizers</a>
+            </li>
+            <li>
+                <a href="dinners.html" onclick=$("#menu-close").click();>about the dinners</a>
+            </li>
+            <li>
+                <a href="#top" onclick=$("#menu-close").click();>magazine</a>
+            </li>
+            <li>
+                <a href="archives.html" onclick=$("#menu-close").click();>archives</a>
+            </li>
+            <li>
+                <a href="contact.html" onclick=$("#menu-close").click();>contact</a>
+            </li>
+        </ul>
+    </nav>
+
+  <div class="container">
+            <div class="row text-center">
+                <h1 style="font-size:70px" class="quattro-sans">Coming Soon!</h1>
+            </div>
+        </div>
+
+    <div class="slideshow-container">
+
+    <div class="mySlides fade-slideshow">
+      <div class="numbertext-slideshow">1 / 5</div>
+      <img class="img-slideshow" src="images/boku_2.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade-slideshow">
+      <div class="numbertext-slideshow">2 / 5</div>
+      <img class="img-slideshow" src="images/dp_5.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade-slideshow">
+      <div class="numbertext-slideshow">3 / 5</div>
+      <img class="img-slideshow" src="images/boku_6.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade-slideshow">
+      <div class="numbertext-slideshow">4 / 5</div>
+      <img class="img-slideshow" src="images/dp_14.JPG" style="width:100%">
+    </div>
+
+     <div class="mySlides fade-slideshow">
+      <div class="numbertext-slideshow">5 / 5</div>
+      <img class="img-slideshow" src="images/boku_4.jpeg" style="width:100%">
+    </div>
+
+    </div>
+
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot-slideshow"></span> 
+      <span class="dot-slideshow"></span> 
+      <span class="dot-slideshow"></span> 
+      <span class="dot-slideshow"></span> 
+      <span class="dot-slideshow"></span> 
+    </div>
+
+
+
+      
+
+         <!-- Footer -->
+
+        <div class="container">
+        <div class="row text-center">
+        <footer class="footer">
+                <div id="wrap">
+                    <div class="container clear-top" id="main">
+                        
+                        <hr class="small">
+                        <p class="text-muted">&copy; Naomi Pohl 2019</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-light btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot-slideshow");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active-slideshow", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active-slideshow";
+          setTimeout(showSlides, 3000); // Change image every 2 seconds
+        }
+    </script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    </script>
+
+</body>
+</html>

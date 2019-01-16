@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dinner Project UPenn">
+    <meta name="keywords" content="Dinner, Project, UPenn">
+    <meta name="author" content="Naomi Pohl, Alex Fisher, Daniel Fradin">
+
+    <title>Dinner Project | Contact</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/stylin.css" rel="stylesheet">
+
+<!-- Fonts/Gliphys -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans" rel="stylesheet">
+
+<!-- Favicon -->
+ <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+    <a id="menu-toggle" href="#" class="btn btn-light btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a>dinner project</a>
+            <li>
+                <a href="index.html" onclick=$("#menu-close").click();>home</a>
+            </li>
+            <li>
+                <a href="about.html" onclick=$("#menu-close").click();>about the organizers</a>
+            </li>
+            <li>
+                <a href="dinners.html" onclick=$("#menu-close").click();>about the dinners</a>
+            </li>
+            <li>
+                <a href="magazine.html" onclick=$("#menu-close").click();>magazine</a>
+            </li>
+            <li>
+                <a href="archives.html" onclick=$("#menu-close").click();>archives</a>
+            </li>
+            <li>
+                <a href="#top" onclick=$("#menu-close").click();>contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row text-center">
+                <h1 style="text-align:center; font-size:70px; margin-top:-30px;" class="quattro-sans">Chat With Us</h1>
+                <div class="col-md-6 col-md-offset-3" style="margin-bottom:-20px;">
+                    <img src="images/logo.png" class="fun-images">
+                    <h1 style="text-align:center; font-size:30px" class="quattro-sans">Have an idea, question or feedback?</h1>
+                    <h4 style="color:white;">We want to hear from you! Shoot us an email, drop us a line, add us on LinkedIn if that's your thing. <br>Connecting with new people is what this is all about.</h4>
+                     <ul class="list-inline">
+                        <li>
+                            <a href="mailto:dinnerprojectupenn@gmail.com"><i class="fa fa-envelope fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+        <footer>
+                <div id="wrap">
+                    <div class="container clear-top" id="main" style="margin-bottom:-200px;">
+                        
+                        <hr class="small">
+                        <p class="text-muted">&copy; Naomi Pohl 2019</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-light btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    </script>
+
+</body>
+</html>
